@@ -39,6 +39,7 @@ export const ListOption: React.FC<ListOptionProps> = ({
       <motion.div
         className="bg-white h-[2px] mt-1"
         animate={isSelected ? "animated" : "default"}
+        exit="default"
         variants={variants.underline}
       />
     </motion.li>

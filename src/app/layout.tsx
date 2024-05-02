@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { Menu } from "@/components/layout/Menu/menu.component";
+import React from "react";
+import { Navbar } from "@/components/layout/Navbar/navbar.component";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -15,18 +16,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <nav className="my-10 mx-8 flex flex-wrap content-center">
-          <div className="z-30">
-            <h1 className="text-xl font-extrabold tracking-wide">
-              Arthur
-              <span className="font-normal ml-2">Fernandez</span>
-            </h1>
-          </div>
-          <Menu />
-        </nav>
+       <Navbar />
         {children}
       </body>
     </html>

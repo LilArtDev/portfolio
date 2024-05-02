@@ -2,27 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: white;
+  position: relative !important;
+  min-width: 100vw;
+}
+
 :root {
   --background-color: #161618;
   overflow-x: hidden !important;
-
 }
-
 
 html {
   scroll-behavior: smooth;
   overflow-x: hidden !important;
 }
 
-body {
-  background-color: var(--background-color);
-  color: white;
-  overflow-x: hidden !important;
-  min-width: 100vw;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+}
+
+.parallax-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.parallax {
+  overflow: hidden;
+  letter-spacing: 0px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 90px;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 30px;
+}
+.parallax .text {
+  color: transparent;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
