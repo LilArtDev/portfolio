@@ -3,7 +3,9 @@ import { ParallaxText } from "@/components/layout/ParalaxText/paralax.component"
 import { Frameworks } from "@/components/sections/frameworks/frameworks.component";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { RiStarSFill } from "react-icons/ri";
+import { LenguageLevel } from "@/components/layout/LenguageLevel/lenguage-level.component";
+import { IoLogoWhatsapp, IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
+import { IoMdMail } from "react-icons/io";
 
 export default function Home() {
   return (
@@ -124,7 +126,7 @@ export default function Home() {
                 Facilis modi nisi alias? Quas, tempore. Nostrum!
               </p>
             </div>
-            <span className="text-lg absolute left-0 -bottom-4">
+            <span className="text-lg absolute left-0 -bottom-5">
               <TypeAnimation
                 sequence={["Loading...", 1000, "", 100]}
                 wrapper="span"
@@ -165,7 +167,7 @@ export default function Home() {
                 Facilis modi nisi alias? Quas, tempore. Nostrum!
               </p>
             </div>
-            <span className="text-lg absolute right-0 -bottom-4">
+            <span className="text-lg absolute right-0 -bottom-5">
               <TypeAnimation
                 sequence={["Loading...", 1000, "", 100]}
                 wrapper="span"
@@ -176,46 +178,51 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-screen">
-        <div className="relative pt-16 px-8 pb-10">
-          <h1 className="text-[38px] font-bold mb-8">Lenguages</h1>
-          <div className="mb-10">
-            <div className="flex justify-start items-end mb-2">
-              <p className="text-xl">Portuguese</p>
-              <p className="text-xs text-green-300 mb-[4px] ml-2">Native</p>
-            </div>
-            <div className="flex">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <RiStarSFill
-                  key={index}
-                  size={50}
-                  className="text-yellow-100 opacity-20"
-                />
-              ))}
-            </div>
-          </div>
-          <div className="mb-10">
-            <div className="flex justify-start items-end mb-2">
-              <p className="text-xl">English</p>
-              <p className="text-xs text-yellow-200 mb-[4px] ml-2">
-                Intermediate
-              </p>
-            </div>
-            <div className="flex">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <RiStarSFill
-                  key={index}
-                  size={50}
-                  className="text-yellow-100 opacity-20"
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+      <section className="w-screen pt-16 px-8 pb-10">
+        <h1 className="text-[38px] font-bold mb-8">Lenguages</h1>
+        <LenguageLevel
+          lenguage="Portuguese"
+          level="Native"
+          rating={5}
+          className="mb-10"
+          levelClassName="text-green-300"
+        />
+        <LenguageLevel
+          lenguage="English"
+          level="Intermediate"
+          rating={3}
+          className="mb-10"
+          levelClassName="text-yellow-200"
+        />
       </section>
       <section className="w-screen">
-        <div className="relative pt-16 px-8 pb-20 bg-violet-300 text-background">
+        <div className="relative pt-16 px-8 pb-8 bg-emerald-200 text-background flex flex-col">
           <h1 className="text-[38px] font-normal mb-8">Contact me</h1>
+          <div className="flex flex-col gap-1 text-sm">
+            <a href="#" className="inline-flex gap-2 items-center">
+              <IoLogoWhatsapp size={25} />
+              <p>+55 (11)95719-0847</p>
+            </a>
+            <a href="#" className="inline-flex gap-2 items-center">
+              <IoMdMail size={25} />
+              <p>contatoarthurfernandez@gmail.com</p>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lilart/"
+              className="inline-flex gap-2 items-center"
+            >
+              <IoLogoLinkedin size={25} />
+              <p>linkedin.com/lilart</p>
+            </a>
+            <a
+              href="https://github.com/LilArtDev"
+              className="inline-flex gap-2 items-center"
+            >
+              <IoLogoGithub size={25} />
+              <p>github.com/LilArtDev</p>
+            </a>
+          </div>
+          <span className="mt-10">© Arthur Fernandez 2024</span>
         </div>
       </section>
     </main>
