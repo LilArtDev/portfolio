@@ -1,131 +1,55 @@
 "use client";
 import React from "react";
-import { Variants, motion } from "framer-motion";
+import { ParallaxText } from "@/components/layout/ParalaxText/paralax.component";
+import { HorizontalCards } from "./custom/HorizontalCards/horizontal-cards.component";
+import * as constants from "./frameworks.constants";
+import { TechnologiesGrid } from "./custom/TechnologiesGrid/technologies-grid.component";
+import { FrameworksGrid } from "./custom/FrameworksGrid/frameworks-grid.component";
 
-const textVariants: Variants = {
-  default: {
-    opacity: 0,
-    y: 15,
-  },
-  animated: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      bounce: 0.1,
-      delay: 0.5,
-    },
-  },
-};
-
-const iconVariants: Variants = {
-  default: {
-    scale: 1.3,
-    y: 15,
-  },
-  animated: {
-    scale: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      bounce: 0.1,
-      delay: 0.5,
-    },
-  },
-};
-
-const cardVariants: Variants = {
-  default: {
-    x: 500,
-    rotate: -0,
-  },
-  animated: {
-    x: 0,
-    y: 0,
-    zIndex: 20,
-    rotate: -10,
-    width: 80,
-    transition: {
-      type: "spring",
-      bounce: 0.1,
-      duration: 0.8,
-    },
-  },
-  focused: {
-    position: "relative",
-    zIndex: 21,
-    x: 0,
-    y: -20,
-    transition: {
-      duration: 0.2,
-    },
-  },
-  focused2: {
-    width: 140,
-    transition: {
-      delay: 0.2,
-    },
-  },
-};
-
-export const cardList: Variants = {
-  default: {
-    transition: {
-      when: "afterChildren",
-    },
-  },
-  animated: {
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-export const Frameworks: React.FC = () => {
-  const [selectedId, setSelectedId] = React.useState<string | null>(null);
-  const food: string[] = ["🍅", "🍊", "🍋", "🍐", "🍏", "🫐", "🍆", "🍇"];
+export const FrameworksSection: React.FC = () => {
 
   return (
-    <React.Fragment>
-      <motion.ul
-        className="inline-flex mt-5 overflow-x-scroll w-screen py-5 pl-10 left-0 absolute z-20 no-scrollbar pr-20"
-        initial="default"
-        whileInView="animated"
-        variants={cardList}
-      >
-        {food.map((food) => (
-            <motion.div
-              onClick={() => setSelectedId(food)}
-              viewport={{ once: true, amount: 0.8 }}
-              variants={cardVariants}
-              initial="default"
-              animate={
-                food === selectedId ? ["focused", "focused2"] : "animated"
-              }
-              key={food}
-              className="flex flex-col h-32 w-32 bg-white justify-center items-center text-[42px] shrink-0 rounded-md border-2 border-violet-950"
-            >
-              <motion.span
-                variants={iconVariants}
-                initial="default"
-                animate={food === selectedId ? "animated" : "default"}
-                layout
-              >
-                {food}
-              </motion.span>
-              <motion.p
-                className="text-violet-950 font-bold text-[18px]"
-                layout
-                initial="default"
-                animate={food === selectedId ? "animated" : "default"}
-                variants={textVariants}
-              >
-                Teste
-              </motion.p>
-            </motion.div>
-        ))}
-      </motion.ul>
-    </React.Fragment>
+    <div className="bg-gradient-to-b from-violet-950 from-40% to-trasparent  border-t-[5px] border-t-">
+      <section className=" w-screen h-[450px] relative md:h-[600px] xl:h-fit xl:pb-16">
+        <ParallaxText
+          baseVelocity={5}
+          text="Frameworks"
+          clasName="absolute h-full w-screen top-0 left-0 opacity-5 select-none xl:hidden"
+        />
+        <div className="static pt-16 px-8 overflow-hidden md:px-32 md:pt-32 xl:px-40">
+          <h1 className="text-[38px] font-bold mb-5 xl:mb-20">
+            My Favorite <br className="xl:hidden " /> Frameworks
+          </h1>
+          <HorizontalCards
+            items={constants.FAVORITE_FRAMEWORKS}
+            className="xl:hidden"
+          />
+          <FrameworksGrid
+            items={constants.FAVORITE_FRAMEWORKS}
+            className="hidden xl:grid"
+          />
+        </div>
+      </section>
+      <section className=" w-screen h-[450px] relative md:h-[600px]  xl:h-fit xl:pb-16">
+        <ParallaxText
+          baseVelocity={10}
+          text="Technologies"
+          clasName="absolute h-full w-screen top-0 left-0 opacity-5 select-none xl:hidden"
+        />
+        <div className="static pt-16 px-8 overflow-hidden md:px-32 md:pt-32  xl:px-40">
+          <h1 className="text-[38px] font-bold mb-5 xl:mb-20">
+            Other <br className="xl:hidden" /> Technologies
+          </h1>
+          <HorizontalCards
+            items={constants.OTHER_TECHNOLOGIES}
+            className="xl:hidden"
+          />
+          <TechnologiesGrid
+            items={constants.OTHER_TECHNOLOGIES}
+            className="hidden xl:grid"
+          />
+        </div>
+      </section>
+    </div>
   );
 };

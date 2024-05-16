@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <React.Fragment>
-      <nav className="py-10 px-8 flex flex-wrap content-center absolute z-30 w-screen">
+      <nav className="py-10 px-8 flex flex-wrap content-center absolute z-30 w-screen md:px-32 xl:px-40">
         <div className="z-30">
           <h1 className="text-xl font-extrabold tracking-wide">
             Arthur

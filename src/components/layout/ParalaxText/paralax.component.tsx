@@ -9,7 +9,7 @@ import {
   useVelocity,
   wrap,
 } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 
 interface ParallaxProps {
@@ -79,9 +79,12 @@ export const ParallaxText: React.FC<ParallaxProps> = ({
           ))}
         </motion.div>
       </div>
-      {Array.from({ length: numChildren }).map((_, scrollerIndex) => (
+      {Array.from({ length: numChildren  }).map((_, scrollerIndex) => (
         <div className="parallax" key={`scroller_${scrollerIndex}`}>
-          <motion.div className="scroller" style={{ x: scrollerIndex % 2 === 0 ? secondaryX : primaryX }}>
+          <motion.div
+            className="scroller"
+            style={{ x: scrollerIndex % 2 === 0 ? secondaryX : primaryX }}
+          >
             {[1, 2, 3, 4].map((key) => (
               <span
                 className="text"

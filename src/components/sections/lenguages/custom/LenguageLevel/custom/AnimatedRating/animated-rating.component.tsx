@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { motion,  } from "framer-motion";
+import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { RateIcon } from "./custom/RateIcon/rate-icon";
 
 export interface AnimatedRatingProps {
-  rating: 1 | 2 | 3 | 4 | 5;
+  rating: 0 | 1 | 2 | 3 | 4 | 5;
   iconSize?: number;
   wrapperClassName?: string;
   iconsClassName?: string;

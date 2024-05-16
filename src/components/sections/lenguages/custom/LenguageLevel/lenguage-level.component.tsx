@@ -20,7 +20,7 @@ export const LenguageLevel: React.FC<LenguageLevelProps> = ({
   levelClassName,
 }) => {
   return (
-    <div className={twMerge(className, "mb-10")}>
+    <div className={twMerge(className, "mb-10 md:w-[360px]")}>
       <div className="flex justify-start items-end mb-2">
         <p className="text-xl">{lenguage}</p>
         <p
