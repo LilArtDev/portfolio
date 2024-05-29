@@ -18,7 +18,7 @@ export const ToggleIcon: React.FC<ToggleIconProps> = ({
   return (
     <div
       className={twMerge(
-        "relative w-[25px] h-[30px] flex flex-col justify-center",
+        "relative w-[25px] h-[30px] flex flex-col justify-center cursor-pointer",
         className
       )}
       onClick={onClick}

@@ -22,10 +22,8 @@ export const TechnologiesGrid: React.FC<TechnologiesGridProps> = ({
       <motion.ul
         className={twMerge(
           className,
-          "xl:grid grid-cols-4 gap-8 max-w-[1500px]"
+          "xl:grid grid-cols-3 2xl:grid-cols-4 gap-8 max-w-[1500px]"
         )}
-        // initial="default"
-        // whileInView="animated"
       >
         {items.map((item, index) => (
           <TechnologyItem key={item.name} {...item} index={index}/>

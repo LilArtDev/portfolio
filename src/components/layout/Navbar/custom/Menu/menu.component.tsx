@@ -15,52 +15,31 @@ import { MobileOverlay } from "./custom/MobileOverlay/mobile-overlay.component";
 
 export interface MenuProps {
   isOpen: boolean;
-  selectedOptionId: null | number;
-  setSelectedOptionId: React.Dispatch<React.SetStateAction<null | number>>;
+  options: ListOptionProps[];
 }
 
-export const Menu: React.FC<MenuProps> = ({
-  isOpen,
-  selectedOptionId,
-  setSelectedOptionId,
-}) => {
-  const BASE_WORD = "TESTE";
-
-  const TEMP_OPTIONS: ListOptionProps[] = Array.from(
-    { length: 5 },
-    (_, index) => ({
-      isSelected: selectedOptionId === index,
-      label: `${BASE_WORD}_${index}`,
-      onClick: () => onOptionClick(index),
-      listVariants: variants.verticalItem,
-    })
-  );
-
-  const TEMP_SOCIAL_OPTIONS: {
+export const Menu: React.FC<MenuProps> = ({ isOpen, options }) => {
+  const SOCIAL_OPTIONS: {
     icon: IconType;
     href: string;
     alt: string;
   }[] = [
     {
       icon: IoLogoGithub,
-      href: "#",
+      href: "https://github.com/LilArtDev",
       alt: "Github",
     },
     {
       icon: FaLinkedinIn,
-      href: "#",
+      href: "https://www.linkedin.com/in/lilart/",
       alt: "LinkedIn",
     },
     {
       icon: FaInstagram,
-      href: "#",
+      href: "https://www.instagram.com/arttie_e",
       alt: "Instagram",
     },
   ];
-
-  function onOptionClick(id: number) {
-    setSelectedOptionId(id);
-  }
 
   return (
     <MobileOverlay isVisible={isOpen}>
@@ -69,7 +48,7 @@ export const Menu: React.FC<MenuProps> = ({
         animate={isOpen ? "animated" : "default"}
         variants={variants.verticalList}
       >
-        {TEMP_OPTIONS.map((props) => (
+        {options.map((props) => (
           <ListOption {...props} key={props.label} />
         ))}
       </motion.ul>
@@ -78,12 +57,9 @@ export const Menu: React.FC<MenuProps> = ({
         animate={isOpen ? "animated" : "default"}
         variants={variants.horizontalList}
       >
-        {TEMP_SOCIAL_OPTIONS.map(({ icon: Icon, ...props }) => (
-          <motion.li
-            key={props.href}
-            variants={variants.horizontalItem}
-          >
-            <a {...props}>
+        {SOCIAL_OPTIONS.map(({ icon: Icon, ...props }) => (
+          <motion.li key={props.href} variants={variants.horizontalItem}>
+            <a {...props} target="_blank">
               <Icon size={27} color="white" />
             </a>
           </motion.li>

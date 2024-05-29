@@ -1,7 +1,10 @@
 import React from "react";
 import { LenguageLevel } from "./custom/LenguageLevel/lenguage-level.component";
+import { useMediaQuery } from "@/shared/hooks";
 
 export const LenguagesSection: React.FC = () => {
+  const isXlScreen = useMediaQuery("xl");
+
   return (
     <section className="w-screen pt-16 px-8 pb-10 md:px-32 md:pb-32 md:pt-32 xl:px-40">
       <h1 className="text-[38px] font-bold mb-8 md:mb-16">Lenguages</h1>
@@ -20,20 +23,24 @@ export const LenguagesSection: React.FC = () => {
           className="mb-10"
           levelClassName="text-yellow-200"
         />
-        <LenguageLevel
-          lenguage="Spanish"
-          level="Future Learning"
-          rating={0}
-          className="mb-10"
-          levelClassName="text-blue-300 hidden xl:block"
-        />
-        <LenguageLevel
-          lenguage="Japanese"
-          level="Interested in Learning"
-          rating={0}
-          className="mb-10"
-          levelClassName="text-gray hidden xl:block"
-        />
+        {isXlScreen && (
+          <React.Fragment>
+            <LenguageLevel
+              lenguage="Spanish"
+              level="Future Learning"
+              rating={0}
+              className="mb-10"
+              levelClassName="text-blue-300 "
+            />
+            <LenguageLevel
+              lenguage="Japanese"
+              level="Interested in Learning"
+              rating={0}
+              className="mb-10"
+              levelClassName="text-gray "
+            />
+          </React.Fragment>
+        )}
       </div>
     </section>
   );

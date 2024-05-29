@@ -22,7 +22,6 @@ export const TechnologyItem: React.FC<TechnologyItemProps> = ({
   return (
     <motion.div
       viewport={{ once: true, amount: 0.8 }}
-      //   variants={variants.cardVariants}
       initial="default"
       key={name}
       className=" h-[220px] w-[320px] bg-black/40  rounded-2xl cursor-pointer relative overflow-hidden"
@@ -76,7 +75,7 @@ export const TechnologyItem: React.FC<TechnologyItemProps> = ({
                   y: 10,
                 }}
               >
-                Uma paisagem deslumbrante onde o sol se põe atrás de montanhas
+                {description}
               </motion.p>
             </motion.div>
           </React.Fragment>

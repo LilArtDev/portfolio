@@ -6,11 +6,11 @@ import ImageSrc from "@/app/front-end-wallpaper.png";
 
 export const PresentationSection: React.FC = () => {
   return (
-    <section className="bg-violet-950 w-screen h-screen relative pt-40 xl:py-40 px-8 overflow-hidden md:px-32 xl:px-40">
+    <section className="bg-violet-950/70 w-screen h-screen relative pt-40 xl:py-40 px-8 md:px-32 xl:px-40 overflow-hidden">
       <Image
         src={ImageSrc}
         alt="front-end background image"
-        className="hidden xl:block w-screen h-screen absolute top-0 left-0 opacity-20 object-cover"
+        className="hidden xl:block w-screen h-screen absolute top-0 left-0 opacity-10 object-cover"
       />
       <motion.div
         className="absolute bg-white/10 h-80 w-80 rounded-full bottom-40 -right-28 xl:hidden"
@@ -61,13 +61,14 @@ export const PresentationSection: React.FC = () => {
             })}
           </motion.span>
         </h1>
-        <p className="mt-6 md:text-[18px] md:mt-10 max-w-[600px]">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit
-          possimus beatae delectus praesentium iusto nam, tenetur, reiciendis
-          nobis enim voluptas nesciunt temporibus libero omnis? Maiores, vitae
-          ullam. Culpa, asperiores libero?
+        <p className="mt-6 md:text-[18px] md:mt-10 max-w-[600px] xl:text-[21px]">
+          Hello! I&apos;m a developer with expertise in web and mobile
+          applications, using technologies like React, React Native, NestJS, and
+          AWS. I focus on creating clean, efficient, and user-centered
+          solutions.
         </p>
       </div>
+      <div className="section-wave"></div>
     </section>
   );
 };

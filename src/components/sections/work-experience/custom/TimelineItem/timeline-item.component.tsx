@@ -17,11 +17,11 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
   showLoadingBelow = false,
 }) => {
   return (
-    <div className="flex relative h-[360px] md:w-full">
+    <div className="flex relative min-h-[360px] h-fit md:w-full md:max-w-[600px] pb-10">
       <span className="text-[42px] font-bold mt-4 md:hidden">
         {displayNumber < 10 ? `0${displayNumber}` : displayNumber}
       </span>
-      <div className="bg-violet-900 h-[300px] w-[2px] absolute left-[16px] top-[80px] md:hidden" />
+      <div className="bg-violet-900 h-[85%] w-[2px] absolute left-[16px] top-[80px] md:hidden" />
       <div className="ml-5 md:ml-0 w-full">
         <span className="text-sm text-violet-400">{headline}</span>
         <h2 className="text-[32px] font-semibold leading-8 mb-4 max-w-[200px]">{title}</h2>

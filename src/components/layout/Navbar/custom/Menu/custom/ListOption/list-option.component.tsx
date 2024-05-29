@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import * as variants from "./list-option.animation";
 
 export interface ListOptionProps {
@@ -9,7 +9,6 @@ export interface ListOptionProps {
   label: string;
   onClick?: () => void;
   className?: string;
-  listVariants: Variants;
 }
 
 export const ListOption: React.FC<ListOptionProps> = ({
@@ -17,7 +16,6 @@ export const ListOption: React.FC<ListOptionProps> = ({
   className,
   onClick,
   label,
-  listVariants,
 }) => {
   return (
     <motion.li
@@ -26,7 +24,7 @@ export const ListOption: React.FC<ListOptionProps> = ({
         "w-fit mt-4 flex flex-col justify-center items-center"
       )}
       onClick={onClick}
-      variants={listVariants}
+      variants={variants.verticalItem}
     >
       <motion.span
         className="text-lg relative"

@@ -31,16 +31,6 @@ export const horizontalList: Variants = {
   },
 };
 
-export const verticalItem: Variants = {
-  default: {
-    opacity: 0,
-    y: 20,
-  },
-  animated: {
-    opacity: 1,
-    y: 0,
-  },
-};
 export const horizontalItem: Variants = {
   default: {
     opacity: 0,

@@ -149,7 +149,7 @@ export const TechnologyItem: React.FC<TechnologyItemProps> = ({
             }
           >
             <motion.p
-            className="pl-10 pr-5 pt-10"
+              className="pl-10 pr-5 pt-10"
               initial={{
                 opacity: 0,
                 y: 20,
@@ -173,10 +173,7 @@ export const TechnologyItem: React.FC<TechnologyItemProps> = ({
                     }
               }
             >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-              dolore ad consequuntur reprehenderit! Suscipit minima voluptas
-              inventore error perferendis aliquid sapiente hic adipisci sequi
-              tempora? Provident porro laboriosam quis saepe.
+              {description}
             </motion.p>
           </motion.div>
         </AnimatePresence>

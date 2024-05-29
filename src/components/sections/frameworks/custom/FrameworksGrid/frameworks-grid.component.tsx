@@ -16,12 +16,25 @@ export const FrameworksGrid: React.FC<FrameworksGridProps> = ({
   items,
   className,
 }) => {
+  const scrollContainerRef = React.useRef<HTMLUListElement>(null);
   const [clickedId, setClickedId] = React.useState<string | null>(null);
+
+  function handleOnItemClick(itemName: string, index: number) {
+    setClickedId(itemName === clickedId ? null : itemName);
+    scrollContainerRef.current?.scrollTo({
+      left: index * 320,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <React.Fragment>
       <motion.ul
-        className={twMerge(className, "xl:flex  gap-8 max-w-[1500px] overflow-x-scroll overflow-y-hidden no-scrollbar")}
+        ref={scrollContainerRef}
+        className={twMerge(
+          className,
+          "xl:flex w-screen gap-8 overflow-x-scroll overflow-y-hidden no-scrollbar relative -left-40 px-40 pr-60"
+        )}
       >
         {items.map((item, index) => (
           <TechnologyItem
@@ -29,9 +42,7 @@ export const FrameworksGrid: React.FC<FrameworksGridProps> = ({
             {...item}
             index={index}
             showDescription={clickedId === item.name}
-            onClick={() =>
-              setClickedId(item.name === clickedId ? null : item.name)
-            }
+            onClick={() => handleOnItemClick(item.name, index)}
           />
         ))}
       </motion.ul>
