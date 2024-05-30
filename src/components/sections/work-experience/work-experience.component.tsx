@@ -4,12 +4,11 @@ import * as constants from "./work-experience.constants";
 
 export const WorkExperienceSection: React.FC = () => {
   return (
-    <section className="w-screen">
+    <section className="w-screen" id="experiencia">
       <div className="relative pt-16 px-8 pb-20 md:px-32 md:pt-32  xl:px-40">
         <h1 className="text-[38px] font-bold mb-8 md:mb-16">
-          Work
+          Experiência
           <br />
-          Experience
         </h1>
         <div className="md:flex md:justify-between">
           {constants.WORK_EXPERIENCES_TIMELINE_CONTENT.map((content, index) => (

@@ -7,8 +7,8 @@ export const WORK_EXPERIENCES_TIMELINE_CONTENT: Pick<
   {
     headline: "2021 - 2024",
     title: "FullStack Developer",
-    description:
-      "At PeerBR, I played a crucial role in developing and maintaining multiple versions of web and mobile applications. I participated intensively in the creation of the second version of the PeerBR web app using React, Axios, Styled Components, and Jest, ensuring enhanced performance and user experience. I also contributed significantly to the first version of the mobile app in React Native, Redux, and Expo/EAS, focusing on seamless cross-platform functionality. On the backend, I implemented and administered the second version of the REST API with NestJS and PostgreSQL, integrating robust features and ensuring efficient data management. My work with AWS services, including EC2, ECS, S3, and Docker, facilitated smooth deployments and reliable infrastructure.",
+    description: `Na PeerBR (Produto da holding Grupo GCB), desempenhei um papel essencial no desenvolvimento e manutenção das aplicações web e mobile. Contribuí de forma intensiva para a criação da segunda versão do aplicativo web PeerBR, utilizando React, Axios, Styled Components e Jest, assegurando uma performance aprimorada e uma experiência de usuário superior. Também tive uma participação significativa na primeira versão do aplicativo mobile, desenvolvido com React Native, Redux e Expo/EAS, focando em uma funcionalidade perfeita entre plataformas.
+      No backend, implementei e administrei a segunda versão da API REST utilizando NestJS e PostgreSQL, integrando funcionalidades robustas e garantindo uma gestão eficiente dos dados. Trabalhei com serviços AWS, incluindo EC2, ECS, S3 e Docker, o que permitiu implantações contínuas e garantiu uma infraestrutura confiável.`,
   },
 ];
 

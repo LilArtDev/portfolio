@@ -12,7 +12,10 @@ export const FrameworksSection: React.FC = () => {
 
   return (
     <div className="bg-gradient-to-b from-violet-950 from-40% to-trasparent lg:border-t-[5px] lg:border-t-violet-600/50">
-      <section className=" w-screen h-[450px] relative md:h-[600px] xl:h-fit xl:pb-16">
+      <section
+        id="frameworks"
+        className=" w-screen h-[450px] relative md:h-[600px] xl:h-fit xl:pb-16"
+      >
         {!isXlScreen && (
           <ParallaxText
             baseVelocity={5}
@@ -22,7 +25,7 @@ export const FrameworksSection: React.FC = () => {
         )}
         <div className="static pt-16 px-8 overflow-hidden md:px-32 md:pt-32 xl:px-40">
           <h1 className="text-[38px] font-bold mb-5 xl:mb-20">
-            My Favorite <br className="xl:hidden " /> Frameworks
+            Meus Frameworks <br className="xl:hidden " /> Favoritos
           </h1>
           {isXlScreen ? (
             <FrameworksGrid
@@ -37,7 +40,10 @@ export const FrameworksSection: React.FC = () => {
           )}
         </div>
       </section>
-      <section className=" w-screen h-[450px] relative md:h-[600px]  xl:h-fit xl:pb-16">
+      <section
+        id="tecnologias"
+        className=" w-screen h-[450px] relative md:h-[600px]  xl:h-fit xl:pb-16"
+      >
         {!isXlScreen && (
           <ParallaxText
             baseVelocity={10}
@@ -47,7 +53,7 @@ export const FrameworksSection: React.FC = () => {
         )}
         <div className="static pt-16 px-8 overflow-hidden md:px-32 md:pt-32  xl:px-40">
           <h1 className="text-[38px] font-bold mb-5 xl:mb-20">
-            Other <br className="xl:hidden" /> Technologies
+            Outras <br className="xl:hidden" /> Tecnologias
           </h1>
           {isXlScreen ? (
             <TechnologiesGrid

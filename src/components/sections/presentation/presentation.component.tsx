@@ -10,7 +10,7 @@ export const PresentationSection: React.FC = () => {
       <Image
         src={ImageSrc}
         alt="front-end background image"
-        className="hidden xl:block w-screen h-screen absolute top-0 left-0 opacity-10 object-cover"
+        className="hidden xl:block w-screen h-screen absolute top-0 left-0 opacity-20 object-cover select-none -z-10"
       />
       <motion.div
         className="absolute bg-white/10 h-80 w-80 rounded-full bottom-40 -right-28 xl:hidden"
@@ -37,9 +37,9 @@ export const PresentationSection: React.FC = () => {
       />
       <div className="xl:flex flex-col justify-center h-full w-full">
         <h1 className="text-[42px] leading-tight md:text-[64px]">
-          <span className="font-bold">FullStack</span>
+          Desenvolvedor
           <br />
-          Developer
+          <span className="font-bold">FullStack</span>
           <motion.span className=" inline-flex">
             {Array.from({ length: 3 }).map((_, index) => {
               return (
@@ -62,10 +62,9 @@ export const PresentationSection: React.FC = () => {
           </motion.span>
         </h1>
         <p className="mt-6 md:text-[18px] md:mt-10 max-w-[600px] xl:text-[21px]">
-          Hello! I&apos;m a developer with expertise in web and mobile
-          applications, using technologies like React, React Native, NestJS, and
-          AWS. I focus on creating clean, efficient, and user-centered
-          solutions.
+          Olá! Sou um desenvolvedor com expertise em aplicações web e mobile,
+          utilizando tecnologias como React, React Native, NestJS e AWS. Meu
+          foco é criar soluções eficientes e centradas no usuário.
         </p>
       </div>
       <div className="section-wave"></div>

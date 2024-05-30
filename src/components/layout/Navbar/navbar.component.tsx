@@ -4,6 +4,7 @@ import { Menu } from "./custom/Menu/menu.component";
 import { ToggleIcon } from "./custom/ToggleIcon/toggle-icon.component";
 import { useMediaQuery } from "@/shared/hooks";
 import { ListOptionProps } from "./custom/Menu/custom/ListOption/list-option.component";
+import { BASE_MENU_OPTIONS } from "./navbar.constants";
 
 export const Navbar: React.FC = () => {
   const isLgScreen = useMediaQuery("lg");
@@ -12,14 +13,10 @@ export const Navbar: React.FC = () => {
     null
   );
 
-  const TEMP_OPTIONS: ListOptionProps[] = Array.from(
-    { length: 5 },
-    (_, index) => ({
-      isSelected: selectedOptionId === index,
-      label: `Mano_1`,
-      onClick: () => console.log("a"),
-    })
-  );
+  const options: ListOptionProps[] = BASE_MENU_OPTIONS.map((option) => ({
+    ...option,
+    isSelected: option.label === "a",
+  }));
 
   const toggleIconPress = React.useCallback(() => {
     setIsOpen(!isOpen);
@@ -46,9 +43,9 @@ export const Navbar: React.FC = () => {
         </div>
         {isLgScreen ? (
           <ul className="flex gap-8">
-            {TEMP_OPTIONS.map((element) => (
+            {options.map((element) => (
               <li key={element.label} className="cursor-pointer">
-                <a>{element.label}</a>
+                <a href={element.href}>{element.label}</a>
               </li>
             ))}
           </ul>
@@ -60,7 +57,7 @@ export const Navbar: React.FC = () => {
           />
         )}
       </nav>
-      {!isLgScreen && <Menu options={TEMP_OPTIONS} isOpen={isOpen} />}
+      {!isLgScreen && <Menu options={options} isOpen={isOpen} />}
     </React.Fragment>
   );
 };

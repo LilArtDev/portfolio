@@ -22,120 +22,121 @@ export const FAVORITE_FRAMEWORKS: TechnologyItemProps[] = [
     name: "Reactjs",
     icon: FaReact,
     description:
-      "Extensive experience in building dynamic and responsive user interfaces with React. Developed and maintained the second version of the PeerBR web application, focusing on performance and user experience improvements.",
+      "Experiência extensa na construção de interfaces de usuário dinâmicas e responsivas com React. Desenvolvi e mantive a segunda versão do aplicativo web PeerBR, focando em melhorias de desempenho e experiência do usuário.",
   },
   {
     name: "React Native",
     icon: FaReact,
     description:
-      "Proficient in creating cross-platform mobile applications with React Native. Contributed to the development, deployment, and maintenance of the PeerBR mobile app, ensuring a seamless user experience on both iOS and Android.",
+      "Proficiência na criação de aplicações móveis multiplataforma com React Native. Contribuí para o desenvolvimento, implantação e manutenção do aplicativo mobile PeerBR, garantindo uma experiência de usuário perfeita tanto em iOS quanto em Android.",
   },
   {
     name: "Nextjs",
     icon: TbBrandNextjs,
     description:
-      "Skilled in building server-side rendered and static web applications using Next.js. Played a key role in developing the second version of the PeerBR website, optimizing for performance and SEO.",
+      "Habilidade na construção de aplicações web renderizadas no servidor e estáticas usando Next.js. Desempenhei um papel fundamental no desenvolvimento da segunda versão do site PeerBR, otimizando para desempenho e SEO.",
   },
   {
     name: "Nestjs",
     icon: SiNestjs,
     description:
-      "Experienced in creating scalable and efficient server-side applications with NestJS. Implemented and managed the second version of the PeerBR REST API, integrating it with PostgreSQL and ensuring robust performance.",
+      "Experiência na criação de aplicações server-side escaláveis e eficientes com NestJS. Implementei e gerenciei a segunda versão da API REST do PeerBR, integrando-a com PostgreSQL e garantindo um desempenho robusto.",
   },
   {
     name: "Angular",
     icon: FaAngular,
     description:
-      "Background in developing comprehensive web applications using Angular. Gained valuable experience through freelancing projects, delivering high-quality and maintainable code to clients.",
+      "Experiência no desenvolvimento de aplicações web abrangentes usando Angular. Adquiri uma valiosa experiência através de projetos freelancers.",
   },
 ];
 export const OTHER_TECHNOLOGIES: TechnologyItemProps[] = [
   {
     name: "Jest",
     icon: SiJest,
-    description: "JavaScript testing framework for ensuring code correctness.",
+    description:
+      "Framework de testes JavaScript para garantir a correção do código.",
   },
   {
     name: "Storybook",
     icon: SiStorybook,
     description:
-      "UI component explorer for building and testing components in isolation.",
+      "Explorador de componentes UI para construir e testar componentes em isolamento.",
   },
   {
     name: "Tailwind CSS",
     icon: SiTailwindcss,
-    description: "Utility-first CSS framework for rapid UI development.",
+    description: "Framework CSS utilitário para desenvolvimento rápido de UI.",
   },
   {
     name: "NPM",
     icon: FaNpm,
     description:
-      "Package manager for JavaScript, enabling easy management of dependencies.",
+      "Gerenciador de pacotes para JavaScript, facilitando a gestão de dependências.",
   },
   {
     name: "Expo",
     icon: SiExpo,
     description:
-      "Framework for building cross-platform mobile apps with React Native.",
+      "Framework para construção de aplicativos móveis multiplataforma com React Native.",
   },
   {
     name: "Git",
     icon: FaGitAlt,
     description:
-      "Version control system for tracking code changes and collaboration.",
+      "Sistema de controle de versão para rastreamento de mudanças de código e colaboração.",
   },
   {
     name: "AWS",
     icon: FaAws,
     description:
-      "Comprehensive cloud computing platform offering a variety of services.",
+      "Plataforma de computação em nuvem abrangente que oferece uma variedade de serviços.",
   },
   {
     name: "Docker",
     icon: SiDocker,
     description:
-      "Containerization platform for developing, shipping, and running applications.",
+      "Plataforma de conteinerização para desenvolver, enviar e executar aplicações.",
   },
   {
     name: "Postgresql",
     icon: SiPostgresql,
     description:
-      "Open-source relational database system with advanced features.",
+      "Sistema de banco de dados relacional open-source com recursos avançados.",
   },
   {
     name: "Selenium",
     icon: SiSelenium,
     description:
-      "Tool for automating web browsers, commonly used for testing web applications.",
+      "Ferramenta para automação de navegadores web, comumente usada para testar aplicações web.",
   },
   {
     name: "Cypress",
     icon: SiCypress,
     description:
-      "JavaScript-based end-to-end testing framework for web applications.",
+      "Framework de testes end-to-end baseado em JavaScript para aplicações web.",
   },
   {
     name: "GA4",
     icon: SiGoogleanalytics,
     description:
-      "Google Analytics 4 for tracking and analyzing web and app traffic.",
+      "Google Analytics 4 para rastreamento e análise de tráfego web e de aplicativos.",
   },
   {
     name: "Figma",
     icon: SiFigma,
     description:
-      "Collaborative design tool for creating user interfaces and prototypes.",
+      "Ferramenta de design colaborativo para criar interfaces de usuário e protótipos.",
   },
   {
     name: "Azure",
     icon: SiAzuredevops,
     description:
-      "Microsoft's cloud platform offering a range of services for computing, analytics, storage, and networking.",
+      "Plataforma de nuvem da Microsoft com serviços para computação, análise, armazenamento e redes.",
   },
   {
     name: "Jira",
     icon: SiJirasoftware,
     description:
-      "Agile project management tool for planning, tracking, and managing software development.",
+      "Ferramenta de gerenciamento de projetos ágeis para planejar, rastrear e gerenciar o desenvolvimento de software.",
   },
 ];

@@ -4,9 +4,9 @@ import { SOCIAL_MEDIAS } from "./footer.constants";
 
 export const FooterSection: React.FC = () => {
   return (
-    <section className="w-screen">
+    <section id="contato" className="w-screen">
       <div className="relative pt-16 px-8 pb-8 bg-emerald-200 text-background flex flex-col md:px-32 xl:px-40 ">
-        <h1 className="text-[38px] mb-8  font-bold">Contact me</h1>
+        <h1 className="text-[38px] mb-8  font-bold">Contato</h1>
         <div className="flex flex-col gap-4 text-sm">
           {SOCIAL_MEDIAS.map(({ href, text, icon: Icon }) => (
             <a

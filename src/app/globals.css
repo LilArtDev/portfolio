@@ -11,7 +11,6 @@ body {
 body {
   background-color: var(--background-color);
   color: white;
-  position: relative !important;
   min-width: 100vw;
 }
 
@@ -108,4 +107,27 @@ html {
   from {
     transform: rotate(360deg);
   }
+}
+
+html::-webkit-scrollbar-track {
+  z-index: 10;
+  border-radius: 10px;
+  background-color: hsla(268, 100%, 10%, 0.2);
+}
+
+html::-webkit-scrollbar {
+  z-index: 10;
+  width: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+  z-index: 10;
+  border-radius: 20px;
+  background-color: rgb(64, 0, 138);
+  background-image: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    transparent,
+    rgba(0, 0, 0, 0.1) 100%
+  );
 }
