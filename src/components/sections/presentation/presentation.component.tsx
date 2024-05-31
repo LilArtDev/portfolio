@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
-import ImageSrc from "@/app/front-end-wallpaper.png";
+import ImageSrc from "@/assets/front-end-wallpaper.png";
 
 export const PresentationSection: React.FC = () => {
   return (
