@@ -36,7 +36,7 @@ export const LenguagesSection: React.FC = () => {
               levelClassName="text-blue-300 "
             />
             <LenguageLevel
-              lenguage="Japanese"
+              lenguage="Japonês"
               level="Interessado em aprender"
               rating={0}
               className="mb-10"

@@ -5,32 +5,32 @@ import { ToggleIcon } from "./custom/ToggleIcon/toggle-icon.component";
 import { useMediaQuery } from "@/shared/hooks";
 import { ListOptionProps } from "./custom/Menu/custom/ListOption/list-option.component";
 import { BASE_MENU_OPTIONS } from "./navbar.constants";
+import { NavbarContext } from "./context/navbar.context";
+import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
   const isLgScreen = useMediaQuery("lg");
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedOptionId, setSelectedOptionId] = React.useState<null | number>(
-    null
-  );
+
+  const { isHamburguerMenuOpen, setIsHamburguerMenuOpen } =
+    React.useContext(NavbarContext);
 
   const options: ListOptionProps[] = BASE_MENU_OPTIONS.map((option) => ({
     ...option,
-    isSelected: option.label === "a",
   }));
 
   const toggleIconPress = React.useCallback(() => {
-    setIsOpen(!isOpen);
-  }, [isOpen]);
+    setIsHamburguerMenuOpen(!isHamburguerMenuOpen);
+  }, [isHamburguerMenuOpen]);
 
   React.useEffect(() => {
-    if (isOpen) {
+    if (isHamburguerMenuOpen) {
       window.scrollTo({ top: 0, left: 0 });
       document.body.style.position = "fixed";
     }
     return () => {
       document.body.style.position = "unset";
     };
-  }, [isOpen]);
+  }, [isHamburguerMenuOpen]);
 
   return (
     <React.Fragment>
@@ -44,20 +44,29 @@ export const Navbar: React.FC = () => {
         {isLgScreen ? (
           <ul className="flex gap-8">
             {options.map((element) => (
-              <li key={element.label} className="cursor-pointer">
+              <motion.li
+                key={element.label}
+                className="cursor-pointer"
+                initial={{
+                  scale: 1,
+                }}
+                whileHover={{
+                  scale: 1.05,
+                }}
+              >
                 <a href={element.href}>{element.label}</a>
-              </li>
+              </motion.li>
             ))}
           </ul>
         ) : (
           <ToggleIcon
-            isToggled={isOpen}
+            isToggled={isHamburguerMenuOpen}
             onClick={toggleIconPress}
             className="ml-auto"
           />
         )}
       </nav>
-      {!isLgScreen && <Menu options={options} isOpen={isOpen} />}
+      {!isLgScreen && <Menu options={options} />}
     </React.Fragment>
   );
 };

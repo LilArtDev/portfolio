@@ -12,49 +12,35 @@ import {
   ListOptionProps,
 } from "./custom/ListOption/list-option.component";
 import { MobileOverlay } from "./custom/MobileOverlay/mobile-overlay.component";
+import { SOCIAL_OPTIONS } from "./menu.constants";
+import { NavbarContext } from "../../context/navbar.context";
 
 export interface MenuProps {
-  isOpen: boolean;
   options: ListOptionProps[];
 }
 
-export const Menu: React.FC<MenuProps> = ({ isOpen, options }) => {
-  const SOCIAL_OPTIONS: {
-    icon: IconType;
-    href: string;
-    alt: string;
-  }[] = [
-    {
-      icon: IoLogoGithub,
-      href: "https://github.com/LilArtDev",
-      alt: "Github",
-    },
-    {
-      icon: FaLinkedinIn,
-      href: "https://www.linkedin.com/in/lilart/",
-      alt: "LinkedIn",
-    },
-    {
-      icon: FaInstagram,
-      href: "https://www.instagram.com/arttie_e",
-      alt: "Instagram",
-    },
-  ];
+export const Menu: React.FC<MenuProps> = ({ options }) => {
+  const { isHamburguerMenuOpen, setIsHamburguerMenuOpen } =
+    React.useContext(NavbarContext);
 
   return (
-    <MobileOverlay isVisible={isOpen}>
+    <MobileOverlay isVisible={isHamburguerMenuOpen}>
       <motion.ul
         className="mt-[15vh] px-8 w-full flex flex-col justify-center items-center gap-10"
-        animate={isOpen ? "animated" : "default"}
+        animate={isHamburguerMenuOpen ? "animated" : "default"}
         variants={variants.verticalList}
       >
         {options.map((props) => (
-          <ListOption {...props} key={props.label} />
+          <ListOption
+            {...props}
+            key={props.label}
+            onClick={() => setIsHamburguerMenuOpen(false)}
+          />
         ))}
       </motion.ul>
       <motion.ul
         className="w-full flex  justify-center items-center gap-10 mt-auto mb-12"
-        animate={isOpen ? "animated" : "default"}
+        animate={isHamburguerMenuOpen ? "animated" : "default"}
         variants={variants.horizontalList}
       >
         {SOCIAL_OPTIONS.map(({ icon: Icon, ...props }) => (

@@ -1,39 +1,24 @@
-"use client";
 import React from "react";
-import { motion } from "framer-motion";
-import * as variants from "./list-option.animation";
 
 export interface ListOptionProps {
-  isSelected: boolean;
   label: string;
   href: string;
+  onClick?: () => void;
 }
 
 export const ListOption: React.FC<ListOptionProps> = ({
-  isSelected,
   label,
   href,
+  onClick,
 }) => {
   return (
-    <motion.li
+    <li
       className={"w-fit mt-4 flex flex-col justify-center items-center"}
-      variants={variants.verticalItem}
+      onClick={onClick}
     >
-      <motion.a
-        href={href}
-        className="text-lg relative"
-        animate={isSelected ? "animated" : "default"}
-        variants={variants.label}
-      >
+      <a href={href} className="text-lg relative">
         <h2 className="">{label}</h2>
-      </motion.a>
-
-      <motion.div
-        className="bg-white h-[2px] mt-1"
-        animate={isSelected ? "animated" : "default"}
-        exit="default"
-        variants={variants.underline}
-      />
-    </motion.li>
+      </a>
+    </li>
   );
 };

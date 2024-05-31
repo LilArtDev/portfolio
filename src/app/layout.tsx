@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import { Navbar } from "@/components/layout/Navbar/navbar.component";
+import { NavbarProvider } from "@/components/layout/Navbar/context/navbar.context";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -16,12 +17,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body className={montserrat.className}>
-       <Navbar />
-        {children}
+        <NavbarProvider>
+          <Navbar />
+          {children}
+        </NavbarProvider>
       </body>
     </html>
   );
