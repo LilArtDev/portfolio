@@ -25,8 +25,8 @@ export const TechnologiesGrid: React.FC<TechnologiesGridProps> = ({
           "xl:grid grid-cols-3 2xl:grid-cols-4 gap-8 max-w-[1500px]"
         )}
       >
-        {items.map((item, index) => (
-          <TechnologyItem key={item.name} {...item} index={index}/>
+        {items.map((item) => (
+          <TechnologyItem key={item.name} {...item} />
         ))}
       </motion.ul>
     </React.Fragment>

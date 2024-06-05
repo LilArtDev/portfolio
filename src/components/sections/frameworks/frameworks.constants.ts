@@ -1,5 +1,6 @@
 import { FaReact, FaAngular, FaGitAlt, FaAws, FaNpm } from "react-icons/fa6";
 import { TbBrandNextjs } from "react-icons/tb";
+import { SiDart, SiFlutter } from "react-icons/si";
 import {
   SiJest,
   SiNestjs,
@@ -48,8 +49,20 @@ export const FAVORITE_FRAMEWORKS: TechnologyItemProps[] = [
     description:
       "Experiência no desenvolvimento de aplicações web abrangentes usando Angular. Adquiri uma valiosa experiência através de projetos freelancers.",
   },
+  {
+    name: "Flutter",
+    icon: SiFlutter,
+    description:
+      "Adquiri conhecimentos em Flutter através de cursos e desenvolvimento de aplicações pessoais. Tenho experiência na construção de interfaces de usuário modernas e responsivas, utilizando o Dart para desenvolver aplicativos móveis de alta performance. Além disso, implementei arquitetura clean e modularizada para garantir a manutenção e escalabilidade do código.",
+  },
 ];
 export const OTHER_TECHNOLOGIES: TechnologyItemProps[] = [
+  {
+    name: "Dart",
+    icon: SiDart,
+    description:
+      "Linguagem de programação usada para desenvolver aplicativos web e móveis de alta performance.",
+  },
   {
     name: "Jest",
     icon: SiJest,
