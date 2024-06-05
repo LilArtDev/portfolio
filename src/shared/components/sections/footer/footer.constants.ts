@@ -9,7 +9,7 @@ export const SOCIAL_MEDIAS: SocialMedia[] = [
     text: "+55 (11)95719-0847",
   },
   {
-    href: "mailTo:contatoarthurfernandez@gmail.com",
+    href: "mailto:email@provedor.com.br",
     icon: IoMdMail,
     text: "contatoarthurfernandez@gmail.com",
   },
