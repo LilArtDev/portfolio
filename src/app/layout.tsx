@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import "@/global/styles/globals.css";
+import "@/shared/styles/globals.css";
 import React from "react";
 import { Navbar } from "@/components/layout/Navbar/navbar.component";
 import { NavbarProvider } from "@/components/layout/Navbar/context/navbar.context";
@@ -20,10 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <NavbarProvider>
-          <Navbar />
-          {children}
-        </NavbarProvider>
+        <Navbar />
+        {children}
       </body>
     </html>
   );
