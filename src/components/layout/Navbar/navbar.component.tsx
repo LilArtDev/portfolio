@@ -3,9 +3,8 @@ import React from "react";
 import { Menu } from "./custom/Menu/menu.component";
 import { ToggleIcon } from "./custom/ToggleIcon/toggle-icon.component";
 import { useMediaQuery } from "@/shared/hooks";
-import { ListOptionProps } from "./custom/Menu/custom/ListOption/list-option.component";
 import { BASE_MENU_OPTIONS } from "./navbar.constants";
-import { NavbarContext } from "./context/navbar.context";
+import { NavbarContext, NavbarProvider } from "./context/navbar.context";
 import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
@@ -14,9 +13,6 @@ export const Navbar: React.FC = () => {
   const { isHamburguerMenuOpen, setIsHamburguerMenuOpen } =
     React.useContext(NavbarContext);
 
-  const options: ListOptionProps[] = BASE_MENU_OPTIONS.map((option) => ({
-    ...option,
-  }));
 
   const toggleIconPress = React.useCallback(() => {
     setIsHamburguerMenuOpen(!isHamburguerMenuOpen);
@@ -33,7 +29,7 @@ export const Navbar: React.FC = () => {
   }, [isHamburguerMenuOpen]);
 
   return (
-    <React.Fragment>
+          <NavbarProvider>
       <nav className="py-10 px-8 flex items-center content-center lg:justify-between absolute z-30 w-screen md:px-32 xl:px-40">
         <div className="z-30">
           <h1 className="text-xl font-extrabold tracking-wide xl:text-[28px] mb-1 cursor-pointer">
@@ -43,7 +39,7 @@ export const Navbar: React.FC = () => {
         </div>
         {isLgScreen ? (
           <ul className="flex gap-8">
-            {options.map((element) => (
+            {BASE_MENU_OPTIONS.map((element) => (
               <motion.li
                 key={element.label}
                 className="cursor-pointer"
@@ -66,7 +62,7 @@ export const Navbar: React.FC = () => {
           />
         )}
       </nav>
-      {!isLgScreen && <Menu options={options} />}
-    </React.Fragment>
+      {!isLgScreen && <Menu options={BASE_MENU_OPTIONS} />}
+    </NavbarProvider>
   );
 };

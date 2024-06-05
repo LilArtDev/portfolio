@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { ParallaxText } from "@/components/layout/ParalaxText/paralax.component";
 import { HorizontalCards } from "./custom/HorizontalCards/horizontal-cards.component";
 import * as constants from "./frameworks.constants";
 import { TechnologiesGrid } from "./custom/TechnologiesGrid/technologies-grid.component";
 import { FrameworksGrid } from "./custom/FrameworksGrid/frameworks-grid.component";
 import { useMediaQuery } from "@/shared/hooks";
+import { ParallaxText } from "@/shared/components/common/ParalaxText/paralax.component";
 
 export const FrameworksSection: React.FC = () => {
   const isXlScreen = useMediaQuery("xl");

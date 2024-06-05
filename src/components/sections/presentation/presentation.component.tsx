@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
-import ImageSrc from "@/assets/front-end-wallpaper.png";
+import ImageSrc from "@/shared/assets/front-end-wallpaper.png";
 
 export const PresentationSection: React.FC = () => {
   return (
@@ -67,7 +67,7 @@ export const PresentationSection: React.FC = () => {
           foco é criar soluções eficientes e centradas no usuário.
         </p>
       </div>
-      <div className="section-wave"></div>
+      <div className="section-wave"/>
     </section>
   );
 };

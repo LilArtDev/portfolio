@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion, stagger, useAnimate, useInView } from "framer-motion";
+import { motion, useAnimate, useInView } from "framer-motion";
 import { RiStarSFill } from "react-icons/ri";
 import { twMerge } from "tailwind-merge";
 
