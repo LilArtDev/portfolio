@@ -13,6 +13,7 @@ export const FooterSection: React.FC = () => {
               key={href}
               href={href}
               className="inline-flex gap-2 items-center lg:text-[14px]"
+              target="_blank"
             >
               <Icon size={25} />
               <p>{text}</p>

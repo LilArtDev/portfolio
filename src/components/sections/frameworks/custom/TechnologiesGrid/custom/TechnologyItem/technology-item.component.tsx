@@ -9,14 +9,12 @@ export interface TechnologyItemProps {
   icon: IconType;
   name: string;
   description: string;
-  index?: number;
 }
 
 export const TechnologyItem: React.FC<TechnologyItemProps> = ({
   icon: Icon,
   name,
   description,
-  index = 0,
 }) => {
   const [isHovering, setIsHovering] = React.useState(false);
   return (

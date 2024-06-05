@@ -22,7 +22,7 @@ export const FrameworksGrid: React.FC<FrameworksGridProps> = ({
   function handleOnItemClick(itemName: string, index: number) {
     setClickedId(itemName === clickedId ? null : itemName);
     scrollContainerRef.current?.scrollTo({
-      left: index * 320,
+      left: index * 150,
       behavior: "smooth",
     });
   }
@@ -33,7 +33,7 @@ export const FrameworksGrid: React.FC<FrameworksGridProps> = ({
         ref={scrollContainerRef}
         className={twMerge(
           className,
-          "xl:flex w-screen gap-8 overflow-x-scroll overflow-y-hidden no-scrollbar relative -left-40 px-40 pr-60"
+          "xl:flex w-screen gap-8 overflow-x-scroll overflow-y-hidden no-scrollbar relative -left-40 px-40 pr-[700px]"
         )}
       >
         {items.map((item, index) => (

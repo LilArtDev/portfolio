@@ -4,7 +4,7 @@ import { SocialMedia } from "./footer.types";
 
 export const SOCIAL_MEDIAS: SocialMedia[] = [
   {
-    href: "#",
+    href: "https://wa.link/bmhlt8",
     icon: IoLogoWhatsapp,
     text: "+55 (11)95719-0847",
   },
