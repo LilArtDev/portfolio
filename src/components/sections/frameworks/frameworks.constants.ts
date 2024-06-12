@@ -1,21 +1,23 @@
-import { FaReact, FaAngular, FaGitAlt, FaAws, FaNpm } from "react-icons/fa6";
-import { TbBrandNextjs } from "react-icons/tb";
-import { SiDart, SiFlutter } from "react-icons/si";
+import { FaAngular, FaAws, FaGitAlt, FaNpm, FaReact } from "react-icons/fa6";
 import {
-  SiJest,
-  SiNestjs,
-  SiTailwindcss,
-  SiCypress,
-  SiSelenium,
-  SiGoogleanalytics,
-  SiFigma,
-  SiDocker,
-  SiPostgresql,
-  SiStorybook,
-  SiExpo,
   SiAzuredevops,
+  SiCypress,
+  SiDart,
+  SiDocker,
+  SiDotnet,
+  SiExpo,
+  SiFigma,
+  SiFlutter,
+  SiGoogleanalytics,
+  SiJest,
   SiJirasoftware,
+  SiNestjs,
+  SiPostgresql,
+  SiSelenium,
+  SiStorybook,
+  SiTailwindcss,
 } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 import { TechnologyItemProps } from "./custom/TechnologiesGrid/custom/TechnologyItem/technology-item.component";
 
 export const FAVORITE_FRAMEWORKS: TechnologyItemProps[] = [
@@ -54,6 +56,12 @@ export const FAVORITE_FRAMEWORKS: TechnologyItemProps[] = [
     icon: SiFlutter,
     description:
       "Adquiri conhecimentos em Flutter através de cursos e desenvolvimento de aplicações pessoais. Tenho experiência na construção de interfaces de usuário modernas e responsivas, utilizando o Dart para desenvolver aplicativos móveis de alta performance. Além disso, implementei arquitetura clean e modularizada para garantir a manutenção e escalabilidade do código.",
+  },
+  {
+    name: ".NET",
+    icon: SiDotnet,
+    description:
+      "Após fazer um curso de C# na Udemy, passei a utilizar .NET para desenvolver REST APIs, aprimorando minhas habilidades na construção de serviços web eficientes.",
   },
 ];
 export const OTHER_TECHNOLOGIES: TechnologyItemProps[] = [
