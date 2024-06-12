@@ -3,6 +3,7 @@ import { useMediaQuery } from "@/shared/hooks";
 import { motion } from "framer-motion";
 import React from "react";
 import { NavbarContext } from "./context/navbar.context";
+import { DownloadCVButton } from "./custom/DownloadCvButton/download-cv-button.component";
 import { Menu } from "./custom/Menu/menu.component";
 import { ToggleIcon } from "./custom/ToggleIcon/toggle-icon.component";
 import { BASE_MENU_OPTIONS } from "./navbar.constants";
@@ -37,7 +38,7 @@ export const Navbar: React.FC = () => {
           </h1>
         </div>
         {isLgScreen ? (
-          <ul className="flex gap-8">
+          <ul className="flex gap-8 items-center">
             {BASE_MENU_OPTIONS.map((element) => (
               <motion.li
                 key={element.label}
@@ -52,6 +53,7 @@ export const Navbar: React.FC = () => {
                 <a href={element.href}>{element.label}</a>
               </motion.li>
             ))}
+            <DownloadCVButton />
           </ul>
         ) : (
           <ToggleIcon

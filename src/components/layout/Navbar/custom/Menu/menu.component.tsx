@@ -1,19 +1,16 @@
 "use client";
+import { motion } from "framer-motion";
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
 
-import { IoLogoGithub } from "react-icons/io5";
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
-import { IconType } from "react-icons";
-
-import * as variants from "./menu.animation";
+import { NavbarContext } from "../../context/navbar.context";
+import { DownloadCVButton } from "../DownloadCvButton/download-cv-button.component";
 import {
   ListOption,
   ListOptionProps,
 } from "./custom/ListOption/list-option.component";
 import { MobileOverlay } from "./custom/MobileOverlay/mobile-overlay.component";
+import * as variants from "./menu.animation";
 import { SOCIAL_OPTIONS } from "./menu.constants";
-import { NavbarContext } from "../../context/navbar.context";
 
 export interface MenuProps {
   options: ListOptionProps[];
@@ -37,6 +34,7 @@ export const Menu: React.FC<MenuProps> = ({ options }) => {
             onClick={() => setIsHamburguerMenuOpen(false)}
           />
         ))}
+        <DownloadCVButton />
       </motion.ul>
       <motion.ul
         className="w-full flex  justify-center items-center gap-10 mt-auto mb-12"
