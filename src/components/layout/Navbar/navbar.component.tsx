@@ -1,18 +1,17 @@
 "use client";
+import { useMediaQuery } from "@/shared/hooks";
+import { motion } from "framer-motion";
 import React from "react";
+import { NavbarContext } from "./context/navbar.context";
 import { Menu } from "./custom/Menu/menu.component";
 import { ToggleIcon } from "./custom/ToggleIcon/toggle-icon.component";
-import { useMediaQuery } from "@/shared/hooks";
 import { BASE_MENU_OPTIONS } from "./navbar.constants";
-import { NavbarContext, NavbarProvider } from "./context/navbar.context";
-import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
   const isLgScreen = useMediaQuery("lg");
 
   const { isHamburguerMenuOpen, setIsHamburguerMenuOpen } =
     React.useContext(NavbarContext);
-
 
   const toggleIconPress = React.useCallback(() => {
     setIsHamburguerMenuOpen(!isHamburguerMenuOpen);
@@ -29,7 +28,7 @@ export const Navbar: React.FC = () => {
   }, [isHamburguerMenuOpen]);
 
   return (
-          <NavbarProvider>
+    <React.Fragment>
       <nav className="py-10 px-8 flex items-center content-center lg:justify-between absolute z-30 w-screen md:px-32 xl:px-40">
         <div className="z-30">
           <h1 className="text-xl font-extrabold tracking-wide xl:text-[28px] mb-1 cursor-pointer">
@@ -63,6 +62,6 @@ export const Navbar: React.FC = () => {
         )}
       </nav>
       {!isLgScreen && <Menu options={BASE_MENU_OPTIONS} />}
-    </NavbarProvider>
+    </React.Fragment>
   );
 };
