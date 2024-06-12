@@ -1,7 +1,6 @@
 "use client";
+import { motion } from "framer-motion";
 import React from "react";
-import { twMerge } from "tailwind-merge";
-import { AnimatePresence, motion } from "framer-motion";
 import * as variants from "./mobile-overlay.animation";
 
 interface MobileOverlayProps {
@@ -21,7 +20,7 @@ export const MobileOverlay: React.FC<
             variants={variants.backgroundOverlay}
           />
           <motion.div
-            className="bg-gradient-to-r from-violet-700  to-violet-500/30 h-screen w-screen z-20 absolute top-0 right-0"
+            className="bg-gradient-to-r from-violet-700  to-violet-500/30 h-screen w-screen z-20 absolute top-0 right-0 overflow-hidden"
             initial="default"
             animate={isVisible ? "animated" : "default"}
             exit='default'

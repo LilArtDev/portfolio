@@ -1,9 +1,9 @@
+import { NavbarProvider } from "@/components/layout/Navbar/context/navbar.context";
+import { Navbar } from "@/components/layout/Navbar/navbar.component";
+import "@/shared/styles/globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import "@/shared/styles/globals.css";
 import React from "react";
-import { Navbar } from "@/components/layout/Navbar/navbar.component";
-import { NavbarProvider } from "@/components/layout/Navbar/context/navbar.context";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -20,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Navbar />
+        <NavbarProvider>
+          <Navbar />
+        </NavbarProvider>
         {children}
       </body>
     </html>
